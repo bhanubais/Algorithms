@@ -1,3 +1,8 @@
+# The Last Algorithms course you'll need
+- by ThePrimeagen
+- https://theprimeagen.github.io/fem-algos/
+- Available on FrontendMaster freely.
+
 ## Follow using below repo
 
 Download ``git@github.com:ThePrimeagen/kata-machine.git` repo.
