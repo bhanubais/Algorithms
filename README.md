@@ -1,11 +1,12 @@
 ## Follow using below repo
 
+Download ``git@github.com:ThePrimeagen/kata-machine.git` repo.
+
 ```bash
-git clone git@github.com:ThePrimeagen/kata-machine.git
-cd kata-machine
+cd kata_machine
 bun install
 bun generate
-vim $(yarn -s day) # or navigate to day1 folder
+code .\src\day1\LinearSearchList.ts
 ```
 
 ## Implement an algorithm for example `LinearSearchList`
@@ -13,4 +14,3 @@ vim $(yarn -s day) # or navigate to day1 folder
 1. open `kata-machine/src/day1/LinearSearchList.ts`
 2. implement the code
 3. test using `bunx jest Linear`
-
