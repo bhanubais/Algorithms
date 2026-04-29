@@ -20,26 +20,55 @@ bun day
 2. Implement the code
 3. test using `bunx jest BinarySearchList`
 
-### The two crystal ball problem
+## The two crystal ball problem
 
+**Problem Statement:**
 Given two crystal balls that will break if dropped from high enough distance, determine the exact spot in which it will break in the most optimized way.
 
 Note: In this problem, it is assumed that there will be a maximum height given from where the ball will be break certainly.
 
-**Solution:**
-we can consider this maximum heigth as `n`. Now the problem became like searching first breaking point in a list as below:
+**Convert the problem in Mathematics:**
+we can consider this maximum heigth as `n`. Now the problem became like searching first breaking point in an array as below:
 `[0, 0, ..., 0, 1, 1, ... 1, 1]`. Here 0 means not break, 1 means break.
 
-But If we start searching linearly we may find the breaking point in O(n).
+### Solution 1: Linear Search
 
-**Can we do better?**
-Let's search binary way, suppose in n/2^k the first ball break, we can say certainly that the breaking point is on the leftside and start searching linearly from the left side. The total time would be O(n - n(1 - 1/2^k)). After removing constants, it is again linear.
+The correct naive solution is to iterate the array from beginning to the first hit (i.e. `1`). The worst time is `O(n)`.
 
-**What about jump by sqrt(n) then linearly search backward to find the exact breaking point?**
+### Solution 2: Binary Search
 
-Jump `sqrt(n)` steps at a time until the first ball breaks, then step back to the last known safe point and linearly search forward, resulting in a `sqrt(n)` search.
+Searching for `1` using binary method will need `log(n)` tests and we only have two balls. i.e. we only have two chances to find the first breaking point. So, this method will not work here. **Can we think something different?**
 
-Time complexity = O(sqrt(n))
+### Solution 3: Sqrt(n) jumps
 
-Because second ball require a linear search after the first ball breaks.
+We can jump `sqrt(n)` distance from the beginning until the first ball breaks. At this point, we are certain that the first breaking point must be between previous jump and the current jump.
+
+First, jump by square root of n increments until a break is detected, then jump back one increment and linearly search forward to find the exact breaking point.
+
+```pre
+[0, 0, ..., 0, 1, 1, ... 1, 1]
+      ↑      ↑      ↑...
+             └──────┘
+```
+
+**Time complexity:** `sqrt(n)` -> number of jumps + `sqrt(n)` -> search linearly. That is `O(sqrt(n))`.
+
+1. `code .\src\day1\TwoCrystalBalls.ts`
+2. Implement the code
+3. test using `bunx jest TwoCrystalBalls`
+
+
+### Proposed solution: cube root of n jumps insread of sqrt(n) jumps
+
+The question is cube root of n is less than square root of n, so whether Is it not worthful to use cube root? and why stops here we can even user n^(1/4), or n^(1/5) and so on?
+
+Let's analyze time complexity when using cube root.
+total jumps = n / cube_root(n), linear iteration = cube_root(n)
+
+Before make the mind let's compare `n / sqrt(n)` with `n / cube_root(n)`. What do you think is bigger number?
+`cube_root(n)` < `sqrt(n)` => `n / cube_root(n)` > `n / sqrt(n)`
+
+So, linear iteration may be reduced but number of jumps will be increase.
+
+Hence Algorithm with `sqrt(n)` is better than `cube_root(n)`.
 
