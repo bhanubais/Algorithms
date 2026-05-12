@@ -8,12 +8,14 @@ An array is the fundamental low-level data structure for storing collections of 
 - **Fixed-width elements:** Every slot in the array consumes the exact same number of bytes.
 - **No native operations:** There is no native `insertAt`, `push`, or `pop`. These are higher-level functions (dynamic arrays/lists) built *on top* of pure arrays.
 
-When we declare `A = new Array(n)`, we ask the OS to reserve $n \times \text{width in bytes}$ contiguous memory blocks. The variable `A` merely holds the memory address of the **first** element.
+When we declare `A = new Array(n)`, we ask the OS to reserve $`n \times \text{width\_in\_bytes}`$ contiguous memory blocks. The variable `A` merely holds the memory address of the **first** element.
 
-## Mathematical Pointer Arithmetic ($O(1)$ Access)
-Because elements are fixed-width and contiguous, accessing an element at a specific index does not require linear traversal. The CPU calculates the exact physical address in $O(1)$ time using pointer arithmetic:
+## Mathematical Pointer Arithmetic ($`O(1)`$ Access)
+Because elements are fixed-width and contiguous, accessing an element at a specific index does not require linear traversal. The CPU calculates the exact physical address in $`O(1)`$ time using pointer arithmetic:
 
-$$ \text{Address}(A[i]) = \text{Address}(A[0]) + (i \times \text{element width in bytes}) $$
+```math
+\text{Address}(A[i]) = \text{Address}(A[0]) + (i \times \text{element\_width\_in\_bytes})
+```
 
 ## Low-Level Memory Demonstration (Typed Arrays in JS/TS)
 
@@ -66,7 +68,9 @@ console.log(a16[0]); // Output: 61600
 ## Deletion and Logical "Nulling" ($`O(1)`$)
 Because the array size is physically fixed in RAM, you cannot literally "delete" an element to shrink the array. "Deleting" an element simply means overwriting its fixed memory block with a tombstone value (like `0`, `-1`, or `null`).
 
-$$ A[3] = \text{null} $$
+```math
+A[3] = \text{null}
+```
 
 The physical memory footprint of the array remains unchanged.
 
