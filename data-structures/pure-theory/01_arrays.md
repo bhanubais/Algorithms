@@ -63,7 +63,7 @@ a8[1] = 240;        # MSB
 console.log(a16[0]); // Output: 61600
 ```
 
-## Deletion and Logical "Nulling" ($O(1)$)
+## Deletion and Logical "Nulling" ($`O(1)`$)
 Because the array size is physically fixed in RAM, you cannot literally "delete" an element to shrink the array. "Deleting" an element simply means overwriting its fixed memory block with a tombstone value (like `0`, `-1`, or `null`).
 
 $$ A[3] = \text{null} $$
