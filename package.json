@@ -1,0 +1,17 @@
+{
+	"name": "algorithms",
+	"version": "1.0.0",
+	"description": "Dual-language algorithmic testing environment",
+	"type": "module",
+	"scripts": {
+		"test": "bun test"
+	},
+	"devDependencies": {
+		"@types/node": "^20.0.0",
+		"bun-types": "latest",
+		"typescript": "^5.0.0"
+	},
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	}
+}

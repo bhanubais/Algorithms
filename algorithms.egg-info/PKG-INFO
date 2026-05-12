@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: algorithms
+Version: 0.1.0
+Summary: Dual-language algorithmic testing environment
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: pytest>=8.0.0
+
+# Algorithmic dual-language environment
+
+Dual-language high-speed testing environment for Algorithms and Data Structures.
+
+## Specifications
+
+- **TypeScript**: Executed via \`bun\`. To test: \`bun test <algorithm>\`
+- **Python**: Executed via \`uv\` and \`pytest\`. To test: \`uv run pytest <algorithm>\`
+
+## Index
+
+| ID | Algorithm | Time Complexity | Space Complexity | Status |
+|----|-----------|-----------------|------------------|--------|
