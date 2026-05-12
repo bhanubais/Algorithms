@@ -44,6 +44,32 @@ problems/                   # Applied/LeetCode problems (imports from algorithms
 
 ## Index
 
-| ID | Domain | Architecture | Time Complexity | Space Complexity | Status |
-|----|--------|--------------|-----------------|------------------|--------|
-| 01 | Algorithms | [Linear Search](algorithms/01-linear-search/README.md) | $O(n)$ | $O(1)$ | 🟢 Completed |
+To maintain mathematical rigidity, our index is partitioned by domain. Pure theory dictates concept, while implementations dictate strict Big-O bounding.
+
+### 📚 Pure Theory & Concepts
+Fundamental memory layouts, primitives, and computer science concepts.
+
+| Topic | Subject | Reference |
+|-------|---------|-----------|
+| Arrays | Contiguous Memory Layout & Endianness | [01_arrays.md](data-structures/pure-theory/01_arrays.md) |
+
+### 🏗️ Data Structures (Implementations)
+Dual-language implementations of memory structures.
+
+| ID | Data Structure | Time Complexity (Search) | Space Complexity | Status |
+|----|----------------|--------------------------|------------------|--------|
+| -  | -              | -                        | -                | -      |
+
+### ⚡ Algorithms
+Pure mathematical algorithms operating on structures.
+
+| ID | Algorithm | Time Complexity | Space Complexity | Status |
+|----|-----------|-----------------|------------------|--------|
+| 01 | [Linear Search](algorithms/01-linear-search/README.md) | $O(n)$ | $O(1)$ | 🟢 Completed |
+
+### 🧩 Applied Problems
+LeetCode / Real-world applications mapped to core algorithms.
+
+| ID | Problem | Underpinning Architecture | Status |
+|----|---------|---------------------------|--------|
+| -  | -       | -                         | -      |
