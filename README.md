@@ -65,8 +65,9 @@ Pure mathematical algorithms operating on structures.
 
 | ID | Algorithm | Time Complexity | Space Complexity | Status |
 |----|-----------|-----------------|------------------|--------|
-| 01 | [Linear Search](algorithms/01-linear-search/README.md) | $O(n)$ | $O(1)$ | 🟢 Completed |
-| 02 | [Binary Search](algorithms/02-binary-search/README.md) | $O(\log n)$ | $O(1)$ | 🟢 Completed |
+| 01 | [Linear Search](algorithms/01-linear-search/README.md) | $`O(n)`$ | $`O(1)`$ | 🟢 Completed |
+| 02 | [Binary Search](algorithms/02-binary-search/README.md) | $`O(\log n)`$ | $`O(1)`$ | 🟢 Completed |
+| 03 | [Bubble Sort](algorithms/03-bubble-sort/README.md) | $`O(n^2)`$ | $`O(1)`$ | 🔴 Unsolved |
 
 ### 🧩 Applied Problems
 LeetCode / Real-world applications mapped to core algorithms.
