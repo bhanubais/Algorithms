@@ -20,3 +20,4 @@ Binary Search is a highly efficient algorithm for finding an item from a **sorte
 - **Time Complexity:** $O(\log n)$ in the worst case, as the search space is halved at each step.
 - **Space Complexity:** $O(1)$ auxiliary space, since no additional scaling metadata is required.
 
+![Binary Search](imgs/binary-search.jpg)
