@@ -1,27 +1,27 @@
 [
-  {
-    "name": "Already sorted array",
-    "arr": [1, 2, 3, 4, 5],
-    "expected": [1, 2, 3, 4, 5]
-  },
-  {
-    "name": "Reverse sorted array",
-    "arr": [5, 4, 3, 2, 1],
-    "expected": [1, 2, 3, 4, 5]
-  },
-  {
-    "name": "Random unsorted with duplicates",
-    "arr": [4, 2, 7, 4, 1, 9, 3],
-    "expected": [1, 2, 3, 4, 4, 7, 9]
-  },
-  {
-    "name": "Single element array",
-    "arr": [42],
-    "expected": [42]
-  },
-  {
-    "name": "Empty array",
-    "arr": [],
-    "expected": []
-  }
+	{
+		"name": "Already sorted array",
+		"arr": [1, 2, 3, 4, 5],
+		"expected": [1, 2, 3, 4, 5]
+	},
+	{
+		"name": "Reverse sorted array",
+		"arr": [5, 4, 3, 2, 1],
+		"expected": [1, 2, 3, 4, 5]
+	},
+	{
+		"name": "Random unsorted with duplicates",
+		"arr": [4, 2, 7, 4, 1, 9, 3],
+		"expected": [1, 2, 3, 4, 4, 7, 9]
+	},
+	{
+		"name": "Single element array",
+		"arr": [42],
+		"expected": [42]
+	},
+	{
+		"name": "Empty array",
+		"arr": [],
+		"expected": []
+	}
 ]

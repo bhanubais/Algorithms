@@ -1,7 +1,7 @@
 import importlib.util
 import json
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any
 
 import pytest
 
@@ -20,18 +20,18 @@ spec.loader.exec_module(main_module)
 # TEST VECTORS
 # =============================================================================
 cases_path = Path(__file__).parent / "cases.json"
-cases: list[Dict[str, Any]] = json.loads(cases_path.read_text())
+cases: list[dict[str, Any]] = json.loads(cases_path.read_text())
 
 
 # =============================================================================
 # TEST EXECUTION
 # =============================================================================
 @pytest.mark.parametrize("case", cases, ids=[c["name"] for c in cases])
-def test_algorithm(case: Dict[str, Any]) -> None:
+def test_algorithm(case: dict[str, Any]) -> None:
     """Executes the test vector against the Python implementation."""
     # Bubble sort is in-place. Copy the array to prevent test environment mutation.
     arr_copy = case["arr"].copy()
-    
+
     main_module.bubble_sort(arr_copy)
-    
+
     assert arr_copy == case["expected"]
