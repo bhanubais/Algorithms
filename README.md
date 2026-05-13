@@ -73,4 +73,4 @@ LeetCode / Real-world applications mapped to core algorithms.
 
 | ID | Problem | Underpinning Architecture | Status |
 |----|---------|---------------------------|--------|
-| -  | -       | -                         | -      |
+| 01 | [Two Crystal Balls](problems/01-two-crystal-balls/README.md) | $`O(\sqrt{n})`$ Jump Search | 🔴 Unsolved |
