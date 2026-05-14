@@ -69,7 +69,7 @@ Pure mathematical algorithms operating on structures.
 | 02 | [Binary Search](algorithms/02-binary-search/README.md) | $`O(\log n)`$ | $`O(1)`$ | 🟢 Completed |
 | 03 | [Bubble Sort](algorithms/03-bubble-sort/README.md) | $`O(n^2)`$ | $`O(1)`$ | 🟢 Completed |
 | 04 | [Insertion Sort](algorithms/04-insertion-sort/README.md) | $O(n^2)$ | $O(1)$ | 🟢 Completed |
-| 05 | [Selection Sort](algorithms/05-selection-sort/README.md) | $O(n^2)$ | $O(1)$ | 🟠 PENDING |
+| 05 | [Selection Sort](algorithms/05-selection-sort/README.md) | $O(n^2)$ | $O(1)$ | 🟢 Completed |
 
 ### 🧩 Applied Problems
 LeetCode / Real-world applications mapped to core algorithms.
