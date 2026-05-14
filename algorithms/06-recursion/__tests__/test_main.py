@@ -18,9 +18,24 @@ with open(cases_path) as f:
 def test_solve(case):
     maze = case["maze"]
     wall = case["wall"]
-    start = case["start"]
-    end = case["end"]
+    start = main.Point(case["start"]["x"], case["start"]["y"])
+    end = main.Point(case["end"]["x"], case["end"]["y"])
     expected = case["expected"]
 
     result = main.solve(maze, wall, start, end)
-    assert result == expected
+
+    # Convert result to list of dicts for comparison to handle both Point objects and raw dicts
+    result_dicts = []
+    if result:
+        if isinstance(result[0], dict):
+            result_dicts = result
+        else:
+            result_dicts = [
+                {
+                    "x": getattr(p, "x", p[0] if isinstance(p, tuple) else None),
+                    "y": getattr(p, "y", p[1] if isinstance(p, tuple) else None),
+                }
+                for p in result
+            ]
+
+    assert result_dicts == expected
