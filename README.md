@@ -71,6 +71,7 @@ Pure mathematical algorithms operating on structures.
 | 04 | [Insertion Sort](algorithms/04-insertion-sort/README.md) | $`O(n^2)`$ | $`O(1)`$ | 🟢 Completed |
 | 05 | [Selection Sort](algorithms/05-selection-sort/README.md) | $`O(n^2)`$ | $`O(1)`$ | 🟢 Completed |
 | 06 | [Recursion (Maze Solver)](algorithms/06-recursion/README.md) | $`O(V)`$ | $`O(V)`$ | 🟢 Completed |
+| 07 | [Merge Sort](algorithms/07-merge-sort/README.md) | $`O(n \log n)`$ | $`O(n)`$ | 🟠 PENDING |
 
 ### 🧩 Applied Problems
 LeetCode / Real-world applications mapped to core algorithms.
