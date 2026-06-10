@@ -1,22 +1,17 @@
 def bubble_sort(arr: list[int]) -> None:
-    # Implement the O(n^2) bubble sort algorithm.
-    # Sort the array in-place. Do not return a new array.
     n = len(arr)
-    swapped: bool
+    is_swapped = False
 
-    # iterate i -> [n-1 to 0]
-    for i in range(n - 1, -1, -1):
-        swapped = False
-        # iterate j -> [0 to i)
-        for j in range(i):
-            # print(arr[j], arr[j + 1], " -> ", arr)
-            # swap if require
+    for i in range(n, -1, -1):
+        is_swapped = False
+        for j in range(i - 1):
+            # swap if jth value is greater than (j+1)th value
             if arr[j + 1] < arr[j]:
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
-                swapped = True
+                is_swapped = True
 
         # already sorted
-        if not swapped:
+        if not is_swapped:
             break
 
 

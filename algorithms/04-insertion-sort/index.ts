@@ -1,21 +1,24 @@
 export default function insertion_sort(arr: number[]): void {
-	// TODO: Implement the insertion sort algorithm here (sort in-place).
 	const n = arr.length;
-	let key: number;
+	if (n < 2) return;
+	let pick: number;
 
-	// iterate i -> [1 to n)
 	for (let i = 1; i < n; i++) {
-		key = arr[i];
-
-		// iterate j until correct position of the key
+		pick = arr[i];
 		let j = i - 1;
-		while (0 <= j && key < arr[j]) {
-			// shift element to right-side
+
+		// shift element towards right one element at a time
+		while (0 <= j && pick < arr[j]) {
 			arr[j + 1] = arr[j];
 			j--;
 		}
 
-		// place key element to it's correct position
-		arr[j + 1] = key;
+		// place picked number at correct position
+		arr[j + 1] = pick;
 	}
 }
+
+// Test
+const arr = [4, 2, 7, 4, 1, 9, 3];
+insertion_sort(arr);
+console.log(arr);

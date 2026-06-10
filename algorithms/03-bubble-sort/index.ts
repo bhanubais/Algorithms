@@ -1,21 +1,24 @@
 export function bubble_sort(arr: number[]): void {
-	// TODO: Implement the O(n^2) bubble sort algorithm.
-	// Sort the array in-place. Do not return a new array.
 	const n = arr.length;
-	let swapped = false;
+	let is_swapped: boolean;
 
-	// iterate i -> [n-1 to 0]
-	for (let i = n - 1; i >= 0; i--) {
-		swapped = false;
-		// iterate j -> [0 to i)
-		for (let j = 0; j < i; j++) {
-			// swap if require
+	for (let i = n; i >= 0; i--) {
+		is_swapped = false;
+		for (let j = 0; j < i - 1; j++) {
+			// swap jth and (j+1)th if jth value is greater than (j+1)th value
 			if (arr[j + 1] < arr[j]) {
-				[arr[j + 1], arr[j]] = [arr[j], arr[j + 1]];
-				swapped = true;
+				[arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+				is_swapped = true;
 			}
 		}
+
 		// already sorted
-		if (!swapped) break;
+		if (!is_swapped) {
+			break;
+		}
 	}
 }
+
+const arr = [4, 2, 7, 4, 1, 9, 3];
+bubble_sort(arr);
+console.log(arr);

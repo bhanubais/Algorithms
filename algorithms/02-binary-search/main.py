@@ -3,18 +3,18 @@ def bs_list(haystack: list[int], needle: int) -> bool:
     n = len(haystack)
     lo = 0
     hi = n
-    mid: int
-    value: int
+    md: int
+    md_value: int
 
     while lo < hi:
-        mid = (lo + hi) // 2
-        value = haystack[mid]
+        md = (lo + hi) // 2
+        md_value = haystack[md]
 
-        if value == needle:
+        if md_value == needle:
             return True
-        if value < needle:
-            lo = mid + 1
+        if md_value < needle:
+            lo = md + 1
         else:
-            hi = mid
+            hi = md
 
     return False

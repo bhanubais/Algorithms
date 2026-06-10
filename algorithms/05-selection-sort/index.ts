@@ -1,18 +1,21 @@
 export default function selection_sort(arr: number[]): void {
-	// TODO: Implement the algorithm here.
 	const n = arr.length;
-	let min_key: number;
+	let mn: number;
 
-	// iterate i -> [0 to n-1) to update ith element
 	for (let i = 0; i < n - 1; i++) {
-		min_key = i;
-		// iterate j -> [i+1 to n) to find smallest element
-		for (let j = i + 1; j < n; j++) {
-			if (arr[j] < arr[min_key]) {
-				min_key = j;
+		// find the smallest element in the list
+		mn = i;
+		for (let j = i; j < n; j++) {
+			if (arr[j] < arr[mn]) {
+				mn = j;
 			}
 		}
-		// swap ith element with the smallest element
-		[arr[min_key], arr[i]] = [arr[i], arr[min_key]];
+		// and swap it
+		[arr[mn], arr[i]] = [arr[i], arr[mn]];
 	}
 }
+
+// Test
+const arr = [4, 2, 7, 4, 1, 9, 3];
+selection_sort(arr);
+console.log(arr);

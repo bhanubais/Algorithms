@@ -20,6 +20,24 @@
 		"expected": -1
 	},
 	{
+		"name": "Target exists after all steps",
+		"breaks": [
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			true
+		],
+		"expected": 11
+	},
+	{
 		"name": "Massive Input (n=100) breaks at 77",
 		"breaks": [
 			false,

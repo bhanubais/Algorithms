@@ -1,6 +1,6 @@
 # Recursion: Maze Solver
 
-The simplest way to think of recursion is a function that calls itself until a problem is solved. At its core, recursion is about defining a process in terms of a smaller version of itself. 
+The simplest way to think of recursion is a function that calls itself until a problem is solved. At its core, recursion is about defining a process in terms of a smaller version of itself.
 
 To prevent an infinite sequence, every recursive function **must** have at least one **Base Case**—a condition where the function stops calling itself and instead returns a computed value.
 
@@ -38,12 +38,12 @@ This step is further subdivided into three distinct operations:
 ```json
 {
   "maze": [
-    "xxxxxxxxxx x",
+    "xxxxxxxxxx.x",
     "x        x x",
     "x        x x",
     "x xxxxxxxx x",
     "x          x",
-    "x xxxxxxxxxx"
+    "x.xxxxxxxxxx"
   ],
   "wall": "x",
   "start": { "x": 10, "y": 0 },

@@ -3,60 +3,56 @@ export type Point = {
 	y: number;
 };
 
-const directions = [
-	[0, -1], // top
-	[1, 0], // right
-	[0, 1], // bottom
-	[-1, 0], // left
+const _directions = [
+	{ x: 0, y: -1 } as Point, // top
+	{ x: 1, y: 0 } as Point, // right
+	{ x: 0, y: 1 } as Point, // bottom
+	{ x: -1, y: 0 } as Point, // left
 ];
 
 function walk(
 	maze: string[],
 	wall: string,
-	cur: Point,
-	end: Point,
-	seen: boolean[][],
+	curr: Point,
+	target: Point,
 	path: Point[],
+	seen: boolean[][],
 ): boolean {
 	const maze_w = maze[0].length;
 	const maze_h = maze.length;
 
-	// Base Case 1: Off the map
-	if (cur.x < 0 || maze_w <= cur.x || cur.y < 0 || maze_h <= cur.y) {
+	// BASE Cases: position of current point
+	// 1. Outside the maze
+	if (curr.x < 0 || maze_w <= curr.x || curr.y < 0 || maze_h <= curr.y)
 		return false;
-	}
 
-	// Base Case 2: On the wall
-	if (maze[cur.y][cur.x] === wall) {
-		return false;
-	}
+	// 2. at the wall
+	if (maze[curr.y][curr.x] === wall) return false;
 
-	// Base Case 3: It's the end
-	if (cur.x === end.x && cur.y === end.y) {
-		path.push(cur);
+	// 3. Already seen
+	if (seen[curr.y][curr.x]) return false;
+
+	// 4. at the target
+	if (curr.x === target.x && curr.y === target.y) {
+		path.push(curr);
 		return true;
 	}
 
-	// Base Case 4: We already seen it
-	if (seen[cur.y][cur.x]) {
-		return false;
-	}
+	// RECURSIVE Case
+	// PRE: add current point in path and seen
+	path.push(curr);
+	seen[curr.y][curr.x] = true;
 
-	// Recursion
-	// pre
-	seen[cur.y][cur.x] = true;
-	path.push(cur);
-
-	// recurse in all possible directions
-	for (let d = 0; d < directions.length; d++) {
-		const [dx, dy] = directions[d];
-		const new_cur = { x: cur.x + dx, y: cur.y + dy };
-		if (walk(maze, wall, new_cur, end, seen, path)) {
+	// Recursive Step
+	// Look for each direction
+	for (const d of _directions) {
+		const new_curr: Point = { x: curr.x + d.x, y: curr.y + d.y } as Point;
+		if (walk(maze, wall, new_curr, target, path, seen)) {
 			return true;
 		}
 	}
 
-	// post
+	// POST
 	path.pop();
 
 	return false;
@@ -68,17 +64,17 @@ export default function solve(
 	start: Point,
 	end: Point,
 ): Point[] {
-	// TODO: Implement the algorithm here.
-	const seen: boolean[][] = [];
+	// placeholder for paths
 	const path: Point[] = [];
 
-	// Fill seen with false value
+	// create seen matrix
+	const seen: boolean[][] = [];
 	for (let i = 0; i < maze.length; i++) {
 		seen.push(new Array(maze[0].length).fill(false));
 	}
 
-	// initiate walk
-	walk(maze, wall, start, end, seen, path);
+	// Initiate path
+	walk(maze, wall, start, end, path, seen);
 
 	return path;
 }

@@ -1,16 +1,22 @@
 def insertion_sort(arr: list[int]) -> None:
-    # Implement the insertion sort algorithm here (sort in-place).
     n = len(arr)
+    if n < 2:
+        return
 
-    # iterate i -> [1 to n)
     for i in range(1, n):
-        key = arr[i]
+        pick = arr[i]
         j = i - 1
 
-        # iterate j until correct position of the key
-        while j >= 0 and key < arr[j]:
+        # shift element towards right one element at a time
+        while j >= 0 and pick < arr[j]:
             arr[j + 1] = arr[j]
             j -= 1
 
-        # place key at it's correct position
-        arr[j + 1] = key
+        # place picked number at correct position
+        arr[j + 1] = pick
+
+
+# Test
+arr = [4, 2, 7, 4, 1, 9, 3]
+insertion_sort(arr)
+print(arr)
