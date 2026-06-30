@@ -16,6 +16,7 @@
 			"source.organizeImports": "explicit"
 		},
 		"cSpell.words": [
+			"alist",
 			"Gson",
 			"javac",
 			"LASTEXITCODE"
