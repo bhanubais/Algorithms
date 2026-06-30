@@ -36,10 +36,21 @@ problems/                   # Applied/LeetCode problems (imports from algorithms
 
 ## Execution Protocols
 
-- **Algorithm Test**: `bun test algorithms/01-linear-search` or `uv run pytest algorithms/01-linear-search`
-- **Problem Range Test**: `bun test problems/01-first-and-last-pos`
-- **God Mode (Test Everything)**: `bun test` or `uv run pytest .`
+Audit your algorithms across the tri-language infrastructure. Execute these commands from the root directory to validate logic.
 
+### 1. Isolated Module Execution
+Target a specific algorithm or problem directory. Replace the trailing path with your active module.
+
+* **TypeScript:** `bun test .\algorithms\01-linear-search\`
+* **Python:** `uv run pytest .\algorithms\01-linear-search\`
+* **Java:** `.\test-java.ps1 .\algorithms\01-linear-search\`
+
+### 2. Global Execution
+Validate the entire codebase architecture simultaneously.
+
+* **TypeScript:** `bun test`
+* **Python:** `uv run pytest .`
+* **Java:** Global execution pipeline requires module-specific targeting. Audit individual modules using the isolated script above.
 ---
 
 ## Index
