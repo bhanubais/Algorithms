@@ -86,13 +86,13 @@ Pure mathematical algorithms operating on structures.
 | ID | Algorithm | Time Complexity | Space Complexity | Status |
 | --- | --- | --- | --- | --- |
 | 01 | [Linear Search](algorithms/01-linear-search/README.md) | $O(n)$ | $O(1)$ | 🟢 Completed |
-| 02 | [Binary Search](algorithms/02-binary-search/README.md) | $O(\log n)$ | $O(1)$ | 🟢 Completed |
+| 02 | [Binary Search](algorithms/02-binary-search/README.md) | $O(\log{n})$ | $O(1)$ | 🟢 Completed |
 | 03 | [Bubble Sort](algorithms/03-bubble-sort/README.md) | $O(n^2)$ | $O(1)$ | 🟢 Completed |
 | 04 | [Insertion Sort](algorithms/04-insertion-sort/README.md) | $O(n^2)$ | $O(1)$ | 🟢 Completed |
 | 05 | [Selection Sort](algorithms/05-selection-sort/README.md) | $O(n^2)$ | $O(1)$ | 🟢 Completed |
 | 06 | [Recursion (Maze Solver)](algorithms/06-recursion/README.md) | $O(V)$ | $O(V)$ | 🟢 Completed |
-| 07 | [Merge Sort](algorithms/07-merge-sort/README.md) | $O(n \log n)$ | $O(n)$ | 🟢 Completed |
-| 08 | [Quick Sort](algorithms/08-quick-sort/README.md) | $O(n \log n)$ | $O(1)$ | 🟠 PENDING |
+| 07 | [Merge Sort](algorithms/07-merge-sort/README.md) | $O(n \log{n})$ | $O(n)$ | 🟢 Completed |
+| 08 | [Quick Sort](algorithms/08-quick-sort/README.md) | $O(n \log{n})$ | $O(1)$ | 🟠 PENDING |
 
 ### 🧩 Applied Problems
 
