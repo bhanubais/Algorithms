@@ -20,6 +20,16 @@
 		"expected": [1, 1, 2, 3, 4, 5, 5, 6, 9]
 	},
 	{
+		"name": "Array with negative integers",
+		"arr": [0, -5, 10, -2, 4],
+		"expected": [-5, -2, 0, 4, 10]
+	},
+	{
+		"name": "Uniform state array",
+		"arr": [7, 7, 7, 7, 7],
+		"expected": [7, 7, 7, 7, 7]
+	},
+	{
 		"name": "Single element array",
 		"arr": [42],
 		"expected": [42]
