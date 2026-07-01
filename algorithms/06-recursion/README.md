@@ -52,6 +52,23 @@ This step is further subdivided into three distinct operations:
 ```
 
 ### Approach: Depth-First Search (DFS)
+
+```json
+{
+  "maze": [
+    "xxxxxxxxxx.x",
+    "x        x↓x",
+    "x        x↓x",
+    "x xxxxxxxx↓x",
+    "x↓← ← ← ← ←x",
+    "x.xxxxxxxxxx"
+  ],
+  "wall": "x",
+  "start": { "x": 10, "y": 0 },
+  "end": { "x": 1, "y": 5 }
+}
+```
+
 We can solve this by exploring the maze recursively. From any given point, there are up to four possible moves (Up, Right, Down, Left).
 
 ```text

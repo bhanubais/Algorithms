@@ -1,30 +1,40 @@
+import importlib.util
 import json
-import os
-import sys
+from pathlib import Path
+from typing import Any
 
 import pytest
 
-# Add the parent directory to the path so we can import the module
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-import main
+# =============================================================================
+# MODULE LOADING
+# =============================================================================
+module_path = Path(__file__).parent.parent / "main.py"
+spec = importlib.util.spec_from_file_location("main_module", module_path)
+assert spec is not None, "Failed to load module spec"
+assert spec.loader is not None, "Module spec has no loader"
 
-# Load test cases
-cases_path = os.path.join(os.path.dirname(__file__), "cases.json")
-with open(cases_path) as f:
-    cases = json.load(f)
+main_module = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(main_module)
+
+# =============================================================================
+# TEST VECTORS
+# =============================================================================
+cases_path = Path(__file__).parent / "cases.json"
+cases: list[dict[str, Any]] = json.loads(cases_path.read_text())
 
 
-@pytest.mark.parametrize("case", cases)
-def test_solve(case):
-    maze = case["maze"]
-    wall = case["wall"]
-    start = main.Point(case["start"]["x"], case["start"]["y"])
-    end = main.Point(case["end"]["x"], case["end"]["y"])
+# =============================================================================
+# TEST EXECUTION
+# =============================================================================
+@pytest.mark.parametrize("case", cases, ids=[c["name"] for c in cases])
+def test_algorithm(case: dict[str, Any]) -> None:
+    start = main_module.Point(case["start"]["x"], case["start"]["y"])
+    end = main_module.Point(case["end"]["x"], case["end"]["y"])
     expected = case["expected"]
 
-    result = main.solve(maze, wall, start, end)
+    result = main_module.solve(case["maze"], case["wall"], start, end)
 
-    # Convert result to list of dicts for comparison to handle both Point objects and raw dicts
+    # Standardize result structure for strict equality checks
     result_dicts = []
     if result:
         if isinstance(result[0], dict):
